@@ -1,0 +1,54 @@
+[出力物タイトル]
+タイトル
+[出力物内容]
+"RESTful Game: DjangoとPygameで作る新世代ゲーム"
+
+[出力物タイトル]
+概要
+[出力物内容]
+この勉強会では、ウェブフレームワークであるDjangoとゲーム作成ライブラリであるPygameを組み合わせて、新しい種類のゲームを作成します。RESTfulなゲームデータのやり取りをDjango REST frameworkで実現し、そのデータを元にPygameでゲームを動かすという、新たなゲーム開発の進行形を体験しましょう。
+
+[出力物タイトル]
+ハッシュタグ
+[出力物内容]
+#RESTfulGame #Django #Pygame #Python #GameDev #WebDev #InnovativeGame #PythonStudy #LearnByDoing #CodingChallenge
+
+[出力物タイトル]
+勉強会の目標地点
+[出力物内容]
+RESTfulなゲームの完成
+
+[出力物タイトル]
+目標地点に関する説明文
+[出力物内容]
+DjangoとPygameを駆使して、プレイヤーの行動をリアルタイムにサーバに保存・反映し、その情報をもとにゲームが進行するという、新世代のゲームを完成させましょう。
+
+[出力物タイトル]
+目標地点までに出会う典型的な登場人物
+[出力物内容]
+1. "RESTful Ryan"：RESTful APIの設計に詳しいキャラクター。Django REST frameworkの使い方を教えてくれる。
+2. "Game Guru Greg"：ゲーム開発に詳しいキャラクター。Pygameの使い方やゲームの設計について教えてくれる。
+
+[出力物タイトル]
+初心者に5段階で説明するため、段階に分割したタイトル
+[出力物内容]
+1. Django REST frameworkの基礎
+2. Pygameの基礎
+3. RESTful APIの設計
+4. ゲームの設計とPygameの応用
+5. 全てを組み合わせてゲームを完成させる
+
+[出力物タイトル]
+分割したタイトルの説明
+[出力物内容]
+1. Django REST frameworkの基本的な使用方法を学びます。
+2. Pygameによる基本的なゲーム作成の方法を学びます。
+3. RESTfulなAPIの設計方法を学びます。
+4. Pygameでのゲーム設計の応用を学びます。具体的には、サーバから取得したデータをもとにゲームを動かす方法を学びます。
+5. 学んだ知識を全て用いて、RESTfulなゲームを完成させます。
+
+[出力物タイトル]
+目標地点を想起させるイメージに用いる画像生成プロンプト
+[出力物内容]
+Game, Python, Django, Server, Player, Real-time, Coding, Challenge, Achievement, Fun, Learning, Journey, Completion
+
