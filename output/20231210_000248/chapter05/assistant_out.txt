@@ -1,0 +1,57 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"5. ファイナルプロジェクト: 完全なゲームの作成"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この章では、Django REST frameworkとPygameを使用して、荒廃した世界で生き残るためのアドベンチャーゲームを完成させます。これまで学んだウェブAPIの利用法やゲームのロジック、対話型要素の実装方法を活用して、ウェブAPIから取得したデータをゲーム内の要素として活用したり、ウェブAPIを更新してゲームの世界を動的に変化させる、一連のプロセスを実装します。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. ゲームの設計：ゲームの全体像を設計しましょう。ゲームの目的、プレイヤーの役割、ゲームの進行方法などを明確にします。
+2. APIの活用：ゲームのロジックに必要なデータをAPIから取得する方法を実装します。これにはDjango REST frameworkを活用します。
+3. ゲームのロジック：取得したデータを元にゲームのロジックを実装します。これにはPygameを活用します。
+4. 対話型要素の実装：プレイヤーがゲームの世界と対話できる要素を実装します。これにはAPIの更新とゲームの動的変化を実現する技術を活用します。
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```
+# Django REST Frameworkを使ったAPIからのデータ取得
+import requests
+url = 'your_api_url'
+response = requests.get(url)
+data = response.json()
+
+# Pygameを使ったゲームのロジック実装
+import pygame
+pygame.init()
+gameDisplay = pygame.display.set_mode((800,600))
+pygame.display.set_caption('Post-Apocalyptic REST API')
+clock = pygame.time.Clock()
+crashed = False
+while not crashed:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            crashed = True
+    pygame.display.update()
+    clock.tick(60)
+pygame.quit()
+quit()
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. まずはゲームの全体像を設計します。具体的なゲームの目的やプレイヤーの役割、ゲームの進行方法を考えましょう。
+2. 次に、APIからデータを取得するコードを書きます。ここではDjango REST frameworkを使ったサンプルコードを参考にしましょう。
+3. 取得したデータを使ってゲームのロジックを実装します。ここではPygameを使ったサンプルコードを参考にしましょう。
+4. 最後に、プレイヤーがゲームの世界と対話できる要素を実装します。ここではAPIの更新とゲームの動的変化を実現する技術を活用しましょう。
