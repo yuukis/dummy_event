@@ -1,0 +1,121 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"基礎から学ぶPygame: Pythonでゲーム開発を始めよう"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、Pygameの基本的な使い方から始め、簡単なゲームを作成する方法を学びます。具体的にはウィンドウの作成、キーボード入力の取得、画像の描画など基本的なゲーム開発の要素を学びます。さらに、それらを組み合わせて簡単なRPGのプロトタイプを作成します。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+```
+1. Pygameのインストール
+    まずはPygameのインストールから始めます。以下のコマンドを実行してください。
+    ```
+    pip install pygame
+    ```
+
+2. Pygameの初期化とウィンドウの作成
+    Pygameを使用するには初期化が必要です。そしてウィンドウを作成します。
+    ```python
+    import pygame
+    pygame.init()
+    screen = pygame.display.set_mode((800, 600))
+    ```
+
+3. イベントループとキーボード入力の取得
+    ゲームは基本的に無限ループの中で動作します。このループの中でプレーヤーからの入力を取得します。
+    ```python
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+    ```
+
+4. 画像の描画
+    ゲームには欠かせない要素、画像の描画方法を学びます。
+    ```python
+    image = pygame.image.load("character.png")
+    screen.blit(image, (50, 50))
+    pygame.display.flip()
+    ```
+
+5. キャラクターの動き
+    キーボード入力に応じてキャラクターが動くようにします。
+    ```python
+    x, y = 50, 50
+    speed = 5
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+                elif event.key == pygame.K_UP:
+                    y -= speed
+                elif event.key == pygame.K_DOWN:
+                    y += speed
+                elif event.key == pygame.K_LEFT:
+                    x -= speed
+                elif event.key == pygame.K_RIGHT:
+                    x += speed
+        screen.blit(image, (x, y))
+        pygame.display.flip()
+    ```
+```
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+image = pygame.image.load("character.png")
+
+x, y = 50, 50
+speed = 5
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                running = False
+            elif event.key == pygame.K_UP:
+                y -= speed
+            elif event.key == pygame.K_DOWN:
+                y += speed
+            elif event.key == pygame.K_LEFT:
+                x -= speed
+            elif event.key == pygame.K_RIGHT:
+                x += speed
+    screen.blit(image, (x, y))
+    pygame.display.flip()
+pygame.quit()
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. 最初にPygameをインストールします。
+2. 次に教材テキストの例を参考に自分の環境でゲームウィンドウを作成します。
+3. イベントループとキーボード入力の取得の部分を追加しましょう。ここでエスケープキーでゲームが終了することを確認します。
+4. 画像を描画する部分を追加します。自分で用意したキャラクターの画像が表示されることを確認します。
+5. 最後にキャラクターの動きを実装します。キーボードの矢印キーでキャラクターが動くことを確認します。
+6. 全てが正常に動作したらサンプルコードを完成させましょう。
