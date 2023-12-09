@@ -18,13 +18,13 @@ API駆動型ビデオゲームの完成
 ## 目次
 1. ["Introduction to Django REST framework and Pygame"](chapter01)
     - Django REST frameworkとPygameの基本的な概念と使い方を学びます。
-1. ["Designing and Implementing Your RESTful API"](chapter02)
+2. ["Designing and Implementing Your RESTful API"](chapter02)
     - Django REST frameworkを使用して、あなたのゲームに必要なRESTful APIを設計し、実装します。
-1. ["Creating Your Game with Pygame"](chapter03)
+3. ["Creating Your Game with Pygame"](chapter03)
     - Pygameを使用して、APIを利用する基本的なゲームを作成します。
-1. ["Integrating Your API with Your Game"](chapter04)
+4. ["Integrating Your API with Your Game"](chapter04)
     - 作成したゲームとAPIを統合し、ゲームがAPIからデータを取得して動作するようにします。
-1. ["Testing and Polishing Your API-driven Game"](chapter05)
+5. ["Testing and Polishing Your API-driven Game"](chapter05)
     - 完成したゲームをテストし、必要に応じてAPIやゲームのコードを修正、調整します。
 
 ## 目標地点を想起させるイメージに用いる画像生成プロンプト
