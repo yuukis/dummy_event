@@ -1,0 +1,57 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+Pygameを学ぼう: 基本機能とゲーム開発
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、Pythonでゲーム開発を行うためのライブラリであるPygameの基本的な機能を学びます。Pygameのインストールから、基本的な機能の説明、簡単なゲームの作成までを行います。最終的には、自分でゲームの設計と実装ができるようになることを目指します。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Pygameのインストール
+2. Pygameの基本的な機能：ウィンドウの作成、画像の描画、音声の再生など
+3. イベント処理：キーボードやマウスの操作
+4. 簡単なゲームの作成：キャラクターの移動、オブジェクトの配置、衝突判定など
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+import pygame
+from pygame.locals import *
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((800, 600))
+    clock = pygame.time.Clock()
+
+    while True:
+        clock.tick(60)  
+        screen.fill((0, 0, 0))  
+        
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+
+        pygame.display.update()
+
+if __name__ == "__main__":
+    main()
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. 上記のサンプルコードをPythonファイルに書き込む
+2. ターミナルからPythonファイルを実行する
+3. Pygameでウィンドウが開き、ウィンドウを閉じるとプログラムが終了することを確認する
+4. サンプルコードを改変して、自分だけのゲームを作成する
