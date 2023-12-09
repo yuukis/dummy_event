@@ -1,0 +1,80 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"PythonとDjango REST frameworkで始めるWeb API開発入門"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、PythonとDjango REST frameworkを用いたWeb APIの基礎を学びます。具体的には、Pythonの基本的な文法の復習から始め、Django REST frameworkでのモデル定義、シリアライザの設定、ビューの作成、URLの設定までを扱います。最終的には、簡易的なRPGゲームのキャラクター情報を取得・更新するAPIの作成を目指します。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Pythonの基本文法の復習
+2. Djangoの環境構築
+3. Django REST frameworkの導入
+4. モデルの定義
+5. シリアライザの設定
+6. ビューの作成
+7. URLの設定
+8. APIのテスト
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# models.py
+from django.db import models
+
+class Character(models.Model):
+    name = models.CharField(max_length=30)
+    level = models.IntegerField(default=1)
+
+# serializers.py
+from rest_framework import serializers
+from .models import Character
+
+class CharacterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Character
+        fields = ['name', 'level']
+
+# views.py
+from rest_framework import viewsets
+from .models import Character
+from .serializers import CharacterSerializer
+
+class CharacterViewSet(viewsets.ModelViewSet):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
+
+# urls.py
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+from .views import CharacterViewSet
+
+router = DefaultRouter()
+router.register(r'characters', CharacterViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Pythonの基本文法を復習する
+2. DjangoとDjango REST frameworkをインストールする
+3. 新規Djangoプロジェクトを作成する
+4. 新規アプリケーションを作成し、モデルを定義する
+5. シリアライザを作成する
+6. ビューセットを作成する
+7. URLを設定し、APIを動作確認する
+
