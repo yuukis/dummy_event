@@ -1,0 +1,63 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"Introducing Game Development with Pygame"
+
+---
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+本教材では、Pythonのゲーム開発ライブラリPygameを使用して、基本的なゲーム開発のスキルを習得します。Pygameの基本的な操作から始めて、シンプルな2Dゲームの作成までを目指します。この教材を終えたときには、自分だけのゲームを作成するための基礎知識を持つことができます。
+
+---
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Pygameのインストールと環境設定
+2. Pygameでの描画とアニメーション
+3. キー入力とマウスイベントの処理
+4. サウンドと音楽の再生
+5. シンプルな2Dゲームの作成
+
+---
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+import pygame
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill((0, 0, 0))
+    pygame.display.flip()
+
+pygame.quit()
+```
+
+---
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Pygameをインストールします。
+2. テキストエディタを開き、上記のサンプルコードをコピーします。
+3. コードを保存し、Pythonで実行します。
+4. 実行結果を確認し、理解します。
+
+---
+
