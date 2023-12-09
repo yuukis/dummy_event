@@ -1,0 +1,54 @@
+[出力物タイトル]
+教材タイトル
+[出力物内容]
+"API Magic: Dynamically Altering the Game World using Django REST framework"
+
+[出力物タイトル]
+教材概要
+[出力物内容]
+この教材では、Django REST frameworkを通じてAPIを更新し、ゲームの世界を動的に変化させる方法を学びます。まず、APIの基本的な更新方法を理解し、その後、それを利用してゲームの世界を動的に変える方法を学びます。
+
+[出力物タイトル]
+教材テキスト
+[出力物内容]
+```
+1. APIの更新とその理解
+    - APIとは何か、簡単な復習
+    - Django REST frameworkにおけるAPIの更新方法
+    - APIの更新を通じてデータを変更する方法
+
+2. APIの更新をゲームに適用する
+    - APIの更新がゲームの世界にどのような影響を及ぼすか
+    - 実際にAPIを更新してゲームの世界を動的に変化させるデモ
+```
+
+[出力物タイトル]
+サンプルコード
+[出力物内容]
+```python
+# Django REST frameworkでのAPI更新
+from rest_framework import status
+from rest_framework.response import Response
+from .models import GameWorld
+
+def update(request, pk):
+    try:
+        gameworld = GameWorld.objects.get(pk=pk)
+    except GameWorld.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        gameworld.data = request.data
+        gameworld.save()
+        return Response(status=status.HTTP_200_OK)
+```
+
+[出力物タイトル]
+作業手順
+[出力物内容]
+```
+1. 上記のサンプルコードを参照に、自分のゲーム世界のAPIを更新するコードを書く
+2. APIを更新するためのエンドポイントを設定する
+3. APIの更新が正常に行われるかテストする
+4. APIの更新をゲーム内で反映させ、ゲームの世界が動的に変化するかを確認する
+```
