@@ -1,0 +1,56 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+1. Django REST frameworkの基礎
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+このセクションでは、Django REST frameworkの基礎について学習します。Django REST frameworkは、Djangoをベースにした強力なウェブAPIを構築するためのツールキットです。ここでは、RESTfulなAPIを理解し、Django REST frameworkの基本的な使用方法を学びます。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Django REST frameworkとは
+2. RESTfulなAPIとは
+3. Django REST frameworkのインストール
+4. Django REST frameworkの基本的な使用方法
+5. Django REST frameworkでのAPIの実装
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# Django REST frameworkのインストール
+pip install djangorestframework
+
+# Djangoプロジェクトの作成
+django-admin startproject myproject
+
+# Djangoアプリの作成
+cd myproject
+django-admin startapp myapp
+
+# myapp/views.py
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class HelloWorld(APIView):
+    def get(self, request):
+        return Response({"message": "Hello, world!"})
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Django REST frameworkをインストールします。
+2. Djangoプロジェクトを作成します。
+3. Djangoアプリを作成します。
+4. HelloWorldという名前のAPIエンドポイントを作成します。
+5. ブラウザからAPIエンドポイントにアクセスして、"Hello, world!"というメッセージが表示されることを確認します。
+
