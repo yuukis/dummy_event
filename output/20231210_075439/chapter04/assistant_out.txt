@@ -1,0 +1,63 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"現実をつなぐゲームサーバーの設計と実装"
+
+---
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、自分だけのRPGゲームサーバーを設計し、PythonのDjango REST frameworkを使用して実装を行います。Django REST frameworkの基本的な機能を学びつつ、自らの想像を形にするプロセスを体験します。サーバーがどのように動作し、クライアントとどのように連携を取るかを学びます。
+
+---
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. **ゲームサーバーの設計**<br>
+まずはゲームサーバーの設計から始めましょう。ゲームの世界観、キャラクター、物語の流れなどを考え、それをどのようにサーバーで実現するかを考えます。
+
+2. **Django REST frameworkの基本**<br>
+次に、PythonのDjango REST frameworkの基本を学びます。Django REST frameworkは、RESTfulなAPIを簡単に作成することができるフレームワークです。
+
+3. **APIの設計と実装**<br>
+ゲームサーバーの設計をもとに、必要なAPIを設計します。それぞれのAPIが何を行うのか、どのようなデータを受け取り、どのようなデータを返すのかを明確にします。設計したAPIをDjango REST frameworkを使用して実装します。
+
+4. **テストとデバッグ**<br>
+実装したAPIが正しく動作するかを確認します。テストは開発の大切なフェーズであり、バグを早期に見つけ、修正することができます。
+
+---
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Character
+from .serializers import CharacterSerializer
+
+# Character ViewSet
+class CharacterViewSet(viewsets.ModelViewSet):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
+```
+
+---
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Djangoプロジェクトを新規作成します。
+2. Django REST frameworkをプロジェクトにインストールします。
+3. ゲームサーバーの設計を元に、必要なモデルをDjangoで作成します。
+4. 作成したモデルを元に、Serializerを作成します。
+5. Serializerを使用して、APIを実装します。APIViewもしくはViewSetを使用します。
+6. 実装したAPIの動作をブラウザから確認します。
+7. 不具合があれば修正し、全てのAPIが正常に動作することを確認します。
