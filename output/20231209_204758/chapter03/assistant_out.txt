@@ -1,0 +1,66 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"DjangoとDjango REST Frameworkでゲーム進行状況のAPIを作成"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、PythonのWebフレームワークであるDjangoと、Django REST Frameworkを用いて、ゲームの進行状況を管理するAPIを作成します。まずDjangoの基本的な使い方を学び、その上でDjango REST Frameworkを用いてAPIを作成していきます。最後に、作成したAPIのテスト方法についても説明します。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Djangoのインストールとプロジェクト作成
+2. Djangoでのモデル作成とマイグレーション
+3. Django REST Frameworkのインストールと設定
+4. Django REST FrameworkでのAPI作成
+5. APIのテスト方法
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# Djangoのインストール
+pip install django
+
+# Djangoプロジェクトの作成
+django-admin startproject myproject
+
+# Djangoでのモデル作成とマイグレーション
+python manage.py makemigrations
+python manage.py migrate
+
+# Django REST Frameworkのインストール
+pip install djangorestframework
+
+# Django REST FrameworkでのAPI作成
+from rest_framework import serializers
+from rest_framework import viewsets
+from .models import GameStatus
+
+class GameStatusSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = GameStatus
+        fields = ['score', 'level', 'lives']
+
+class GameStatusViewSet(viewsets.ModelViewSet):
+    queryset = GameStatus.objects.all()
+    serializer_class = GameStatusSerializer
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Djangoをインストールします。
+2. Djangoのプロジェクトを作成します。
+3. Djangoのモデルを作成し、マイグレーションを行います。
+4. Django REST Frameworkをインストールします。
+5. Django REST Frameworkを用いてAPIを作成します。
+6. 作成したAPIをテストします。
+
