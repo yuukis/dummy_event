@@ -1,0 +1,67 @@
+[出力物タイトル]
+教材タイトル
+[出力物内容]
+PythonとPygameでスペースインベーダーゲームの再現
+
+[出力物タイトル]
+教材概要
+[出力物内容]
+本教材では、Pythonの基本的な操作と、ゲーム作成ライブラリであるPygameを利用して、レトロなアーケードゲームの一つであるスペースインベーダーを再現します。Pythonの基本的なコードの書き方から、Pygameの使い方、そしてゲーム作成に必要なロジックの実装方法までを学びます。
+
+[出力物タイトル]
+教材テキスト
+[出力物内容]
+```markdown
+# PythonとPygameでスペースインベーダーゲームの再現
+
+## Pythonとは
+Pythonは、汎用性の高いプログラミング言語で、Web開発からデータ分析、AIまで幅広い用途に使われています。
+
+## Pygameとは
+Pygameは、Pythonでゲームを作成するためのライブラリです。シンプルなAPIながら、音楽や画像など、ゲーム作成に必要な機能を提供しています。
+
+## スペースインベーダーゲームの再現
+今回は、Pygameを使ってスペースインベーダーゲームを再現します。スペースインベーダーは、宇宙人の侵略から地球を守るという設定のシューティングゲームです。プレイヤーは地球を守るために、自機を操作して宇宙人を撃退します。
+
+## PythonとPygameのインストール
+1. Pythonのインストール
+2. Pygameのインストール
+```
+
+[出力物タイトル]
+サンプルコード
+[出力物内容]
+```python
+import pygame
+import sys
+
+# ゲームの初期設定
+WIDTH, HEIGHT = 800, 600
+FPS = 60
+
+# ゲームの初期化
+pygame.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+# ゲームループ
+while True:
+    # イベント処理
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # 画面の描画
+    screen.fill((0, 0, 0))
+    pygame.display.flip()
+    pygame.time.Clock().tick(FPS)
+```
+
+[出力物タイトル]
+作業手順
+[出力物内容]
+```markdown
+1. PythonとPygameのインストール
+2. サンプルコードを新規Pythonファイルにコピー
+3. ファイルを保存し、Pythonインタプリタで実行
+```
