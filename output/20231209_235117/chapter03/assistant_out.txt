@@ -1,0 +1,73 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"Creating a Tavern with Django REST"
+
+---
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、Django REST frameworkを使用して、RPGゲーム中の酒場をデザインおよび実装する方法について学びます。具体的には、データベース設計、APIの作成、データのCRUD操作、そしてそれらを組み合わせて酒場を実現する方法について解説します。
+
+---
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. **データベース設計**: 酒場の設計を始める前に、必要なデータベースの設計をします。ここでは、酒場に訪れる冒険者や酒場で提供する飲食物を管理するためのデータベースを設計します。
+
+2. **APIの作成**: Django REST frameworkを使用して、上記で設計したデータベースにアクセスするためのAPIを作成します。
+
+3. **データのCRUD操作**: 作成したAPIを使用して、データベースのデータを作成(Create)、読み取り(Read)、更新(Update)、削除(Delete)します。
+
+4. **酒場の実装**: 上記のすべてを組み合わせて、冒険者が酒場で飲食物を注文できるシステムを実装します。
+
+---
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# models.py
+from django.db import models
+
+class Adventurer(models.Model):
+    name = models.CharField(max_length=100)
+    gold = models.IntegerField()
+
+class Food(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+
+# views.py
+from rest_framework import viewsets
+from .models import Adventurer, Food
+from .serializers import AdventurerSerializer, FoodSerializer
+
+class AdventurerViewSet(viewsets.ModelViewSet):
+    queryset = Adventurer.objects.all()
+    serializer_class = AdventurerSerializer
+
+class FoodViewSet(viewsets.ModelViewSet):
+    queryset = Food.objects.all()
+    serializer_class = FoodSerializer
+```
+
+---
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. 上記のサンプルコードを参考に、自身のプロジェクトに`models.py`と`views.py`を作成します。
+2. 自身のデータベースに合わせて、`Adventurer`と`Food`モデルのフィールドをカスタマイズします。
+3. `AdventurerViewSet`と`FoodViewSet`を作成して、それぞれのモデルに対するAPIを作成します。
+4. ブラウザやPostmanなどを使用して、作成したAPIが正常に動作することを確認します。
+5. 最後に、冒険者が酒場で飲食物を注文するシステムを実装します。
+
+---
