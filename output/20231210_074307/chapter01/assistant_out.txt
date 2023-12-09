@@ -1,0 +1,71 @@
+[出力物タイトル]
+教材タイトル
+[出力物内容]
+Django REST frameworkの基本
+
+[出力物タイトル]
+教材概要
+[出力物内容]
+この教材では、PythonのWebフレームワークであるDjangoとその上に構築されたRESTful APIフレームワークであるDjango REST frameworkの基本について学びます。
+
+[出力物タイトル]
+教材テキスト
+[出力物内容]
+1. Djangoとは何か
+   DjangoはPythonで書かれたオープンソースのWebアプリケーションフレームワークです。MVC設計パターンを基にしており、モデル、ビュー、テンプレートというコンポーネントを使用してアプリケーションを構築します。
+
+2. Django REST frameworkとは何か
+   Django REST frameworkはDjangoの強力なフレキシブルなツールキットであり、Web APIの構築を容易にします。
+
+3. DjangoとDjango REST frameworkのインストール
+   DjangoとDjango REST frameworkはpipを使用して簡単にインストールできます。コマンドは次の通りです：
+   ```bash
+   pip install django
+   pip install djangorestframework
+   ```
+
+4. Djangoプロジェクトの作成
+   Djangoでは、次のコマンドを使用して新しいプロジェクトを作成します：
+   ```bash
+   django-admin startproject myproject
+   ```
+
+5. Djangoアプリケーションの作成
+   Djangoプロジェクト内で、次のコマンドを使用して新しいアプリケーションを作成します：
+   ```bash
+   python manage.py startapp myapp
+   ```
+
+[出力物タイトル]
+サンプルコード
+[出力物内容]
+```bash
+pip install django
+pip install djangorestframework
+django-admin startproject myproject
+cd myproject
+python manage.py startapp myapp
+```
+
+[出力物タイトル]
+作業手順
+[出力物内容]
+1. DjangoとDjango REST frameworkをインストールします。このためには、次のコマンドをターミナルに入力します：
+   ```bash
+   pip install django
+   pip install djangorestframework
+   ```
+2. Djangoで新しいプロジェクトを作成します。このためには、次のコマンドをターミナルに入力します：
+   ```bash
+   django-admin startproject myproject
+   ```
+3. 作成したプロジェクトのディレクトリに移動します：
+   ```bash
+   cd myproject
+   ```
+4. Djangoプロジェクト内で新しいアプリケーションを作成します。このためには、次のコマンドをターミナルに入力します：
+   ```bash
+   python manage.py startapp myapp
+   ```
+5. インストールやプロジェクト、アプリケーションの作成が正しく行われていることを確認します。
+
