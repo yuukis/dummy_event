@@ -1,0 +1,59 @@
+[出力物タイトル]
+教材タイトル
+[出力物内容]
+1. Django REST frameworkとPygameの基本
+
+[出力物タイトル]
+教材概要
+[出力物内容]
+この教材では、Django REST frameworkとPygameの基本を学びます。まずは、それぞれのフレームワークがどのようなものなのかを理解し、基本的な使用方法を身につけます。Django REST frameworkはPythonで書かれた強力で柔軟なツールで、ウェブAPIの構築に適しています。一方、PygameはPythonでゲームを作成するためのライブラリで、2Dゲームの開発が可能です。
+
+[出力物タイトル]
+教材テキスト
+[出力物内容]
+1. Django REST Frameworkについて
+   - Django REST Frameworkとは何か
+   - Django REST Frameworkの基本的な使用方法
+2. Pygameについて
+   - Pygameとは何か
+   - Pygameの基本的な使用方法
+3. これらのツールを組み合わせて使う理由
+
+[出力物タイトル]
+サンプルコード
+[出力物内容]
+```python
+# Django REST Frameworkの基本的な使用方法
+from rest_framework import viewsets
+from .models import SampleModel
+from .serialisers import SampleModelSerializer
+
+class SampleModelViewSet(viewsets.ModelViewSet):
+    queryset = SampleModel.objects.all()
+    serializer_class = SampleModelSerializer
+
+# Pygameの基本的な使用方法
+import pygame
+pygame.init()
+
+win = pygame.display.set_mode((500,500))
+pygame.display.set_caption("Sample Game")
+
+run = True
+while run:
+    pygame.time.delay(100)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+pygame.quit()
+```
+
+[出力物タイトル]
+作業手順
+[出力物内容]
+1. Django REST Frameworkのインストール
+2. Django REST Frameworkでの簡単なAPIの作成
+3. Pygameのインストール
+4. Pygameでの簡単なゲームの作成
+5. それぞれの基本的な使用方法の理解を深める
