@@ -1,0 +1,58 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"Debugging and Testing APIs with Django REST Framework"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材ではDjango REST Frameworkを用いてAPIをテストとデバッグする方法を学びます。具体的には、単体テストの作成、APIエンドポイントのテスト、デバッグツールの使用方法について取り扱います。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+```
+1. 単体テストの概念とDjangoでの単体テストの方法について学びます。
+2. Django REST Frameworkで提供されるテストクライアントを使用してAPIエンドポイントのテストを行います。
+3. デバッグツールの使い方を学びます。具体的にはDjango Debug ToolbarとPythonのpdbモジュールの使い方を学びます。
+```
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# 単体テストの例
+from django.test import TestCase
+from django.urls import reverse
+from rest_framework.test import APIClient
+
+class APITestCase(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+
+    def test_api_endpoint(self):
+        response = self.client.get(reverse('api-endpoint'))
+        self.assertEqual(response.status_code, 200)
+
+# pdbを使用したデバッグの例
+import pdb
+def some_function():
+    pdb.set_trace() # ここでデバッグが開始されます
+    # 何かの処理
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+```
+1. Djangoのテストケースを作成します。テストケースはdjango.test.TestCaseを継承します。
+2. setUpメソッドでテストに使用するクライアントを設定します。Django REST FrameworkのAPIClientを使用します。
+3. テストしたいAPIエンドポイントに対してテストメソッドを作成します。この例ではtest_api_endpointというメソッドを作成しています。
+4. テストメソッド内でクライアントを使用してAPIエンドポイントにリクエストを送り、レスポンスを確認します。
+5. デバッグを行いたい箇所にpdb.set_trace()を挿入します。そこでデバッグが開始されます。
+```
