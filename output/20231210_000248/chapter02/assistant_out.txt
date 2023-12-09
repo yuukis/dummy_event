@@ -1,0 +1,69 @@
+[出力物タイトル]
+* 教材タイトル：
+
+[出力物内容]
+* APIからのデータ取得とゲーム内での活用
+
+[出力物タイトル]
+* 教材概要：
+
+[出力物内容]
+* このセッションでは、APIを使用してデータを取得し、そのデータをPygameで作成したゲーム内でどのように活用するかについて学びます。APIからデータを取得するためのPythonスクリプトの作成から、そのデータをゲームの要素としてどのように組み込むかまでをカバーします。
+
+[出力物タイトル]
+* 教材テキスト：
+
+[出力物内容]
+1. Django REST frameworkでAPIを設定
+2. Pythonを使用してAPIからデータを取得
+3. APIから取得したデータをゲーム開発に活用
+4. Pygameでゲーム要素を作成し、APIから取得したデータを組み込む
+
+[出力物タイトル]
+* サンプルコード：
+
+[出力物内容]
+```python
+# Django REST frameworkでAPIを設定
+from rest_framework import routers, serializers, viewsets
+
+# Model
+class Game(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+
+# Serializer
+class GameSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Game
+        fields = ['name', 'description']
+
+# ViewSet
+class GameViewSet(viewsets.ModelViewSet):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+
+# Router
+router = routers.DefaultRouter()
+router.register(r'games', GameViewSet)
+```
+```python
+# Pythonを使用してAPIからデータを取得
+import requests
+response = requests.get('http://localhost:8000/games/')
+games = response.json()
+
+# APIから取得したデータをゲーム開発に活用
+for game in games:
+    print(game['name'], game['description'])
+```
+
+[出力物タイトル]
+* 作業手順：
+
+[出力物内容]
+1. Djangoを使ってAPIを設定する
+2. Pythonのrequestsライブラリを使ってAPIからデータを取得する
+3. 取得したデータを確認する
+4. Pygameでゲーム要素を作成し、APIから取得したデータを組み込む
+
