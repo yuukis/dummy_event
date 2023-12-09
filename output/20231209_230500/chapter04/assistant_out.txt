@@ -1,0 +1,66 @@
+[出力物タイトル]
+教材タイトル
+[出力物内容]
+4. 冒険者エンゾウとの共同開発
+
+[出力物タイトル]
+教材概要
+[出力物内容]
+Django REST frameworkで作成したREST APIを、Pygameで開発中のRPGゲームと連携させてみましょう。Pythonのゲーム開発ライブラリPygameで開発しているRPGゲームと、Django REST frameworkで作成したREST APIを連携させるための基本的な手順を学びます。
+
+[出力物タイトル]
+教材テキスト
+[出力物内容]
+# 冒険者エンゾウとの共同開発
+この章では、Django REST frameworkで作成したREST APIを、Pygameで開発中のRPGゲームと連携させてみましょう。具体的には、「エンゾウ」がゲーム内で取得したアイテムや経験値をREST APIを通じてデータベースに保存し、それをゲーム内で利用できるようにします。
+
+1. Django REST frameworkのAPIエンドポイントの作成
+    まず、エンゾウが取得したアイテムや経験値を保存するためのAPIエンドポイントをDjango REST frameworkで作成します。
+
+2. PygameとREST APIの連携
+    次に、Pygameで開発中のゲームから、作成したAPIエンドポイントへアクセスし、データの送受信ができるようにします。
+
+3. データの保存と読み込み
+    エンゾウがゲーム内でアイテムを取得したり、経験値を得たりした際に、その情報をAPIを通じてデータベースに保存します。また、ゲームが開始されるときに、データベースからエンゾウの情報を読み込み、ゲーム内で利用できるようにします。
+
+以上が、Pygameで開発中のRPGゲームとDjango REST frameworkで作成したREST APIの連携の基本的な手順です。
+
+[出力物タイトル]
+サンプルコード
+[出力物内容]
+```python
+# Django REST framework API endpoint
+from rest_framework import routers, serializers, viewsets
+from .models import Adventurer
+
+# Adventurer Serializer
+class AdventurerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Adventurer
+        fields = ('name', 'level', 'exp', 'items')
+
+# Adventurer ViewSet
+class AdventurerViewSet(viewsets.ModelViewSet):
+    queryset = Adventurer.objects.all()
+    serializer_class = AdventurerSerializer
+
+# Routers
+router = routers.DefaultRouter()
+router.register(r'adventurers', AdventurerViewSet)
+
+# Pygame REST API Access
+import requests
+response = requests.get('http://localhost:8000/adventurers/')
+print(response.json())
+```
+
+[出力物タイトル]
+作業手順
+[出力物内容]
+1. Django REST frameworkを使用して、AdventurerモデルのCRUDを提供するAPIエンドポイントを作成します。
+2. Pygameから、作成したAPIエンドポイントにアクセスしてデータを取得するコードを記述します。
+3. 取得したデータをゲーム内で利用できるようにします。
+4. ゲームのアイテム取得や経験値取得のイベントが発生したときに、そのデータをAPIを通じてデータベースに保存するコードを記述します。
+5. ゲーム起動時に、データベースからエンゾウの情報を取得し、ゲーム内で利用できるようにします。
+
+以上で、Pygameで開発中のRPGゲームとDjango REST frameworkで作成したREST APIの連携が完成です。
