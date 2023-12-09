@@ -1,0 +1,68 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"Pygameで始めるゲーム開発入門"
+
+---
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、プログラミング言語Pythonを用いてゲーム開発を行うためのライブラリ、Pygameの基本的な使い方を学びます。Pygameのインストール方法から、基本的なゲームの構造、キャラクターの描画や操作、そしてゲームループの作成までを順に学んでいきます。
+
+---
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+まずはPygameをインストールしてみましょう。お使いの環境に合わせて以下のコマンドを実行します。
+```
+pip install pygame
+```
+次に、Pygameでのゲーム開発の基本的な流れを学びます。Pygameでは、ゲームの描画や操作を行うための「ウィンドウ」を作成します。そのうえで、ゲームの進行を管理する「ゲームループ」を作成します。このゲームループの中で、キャラクターの描画や操作を行っていきます。
+
+---
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+以下に、Pygameでの基本的なゲームの構造を示すサンプルコードを提供します。
+```python
+import pygame
+from pygame.locals import QUIT
+
+pygame.init()
+SURFACE = pygame.display.set_mode((400,300))
+FPSCLOCK = pygame.time.Clock()
+
+def main():
+    while True:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+        pygame.display.update()
+        FPSCLOCK.tick(30)
+
+if __name__ == '__main__':
+    main()
+```
+
+---
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. まず、Pythonがインストールされていることを確認します。
+2. 次に、ターミナルを開き、上記の`pip install pygame`コマンドを実行してPygameをインストールします。
+3. Pygameのインストールが完了したら、上記のサンプルコードをPythonファイルとして保存します。例えば、`game.py`という名前で保存できます。
+4. ターミナルで`python game.py`と入力し、Pythonファイルを実行します。
+5. 無事にウィンドウが表示されれば成功です。これがあなたのゲームの第一歩です。
+
+---
+
