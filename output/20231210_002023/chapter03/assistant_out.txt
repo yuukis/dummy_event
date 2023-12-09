@@ -1,0 +1,66 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"APIとゲームの連携方法を学ぶ: Django REST frameworkとPygame"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+このセッションでは、Django REST frameworkで作成したAPIとPygameで作成したゲームを連搐させる方法を学びます。具体的には、ゲーム内のデータをAPI経由で取得して表示したり、ゲームの状況をAPIへ送信したりする方法を扱います。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+```
+1. APIとは何か、RESTとは何かを再確認する
+2. Django REST frameworkで作成したAPIの概要を理解する
+3. Pygameで作成したゲームの概要を理解する
+4. Pythonのrequestsライブラリを使ってAPIからデータを取得する方法を学ぶ
+5. 取得したデータをPygameで表示する方法を学ぶ
+6. ゲームの状況をAPIへ送信する方法を学ぶ
+7. 送信したデータをAPIで適切に処理する方法を学ぶ
+```
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+import requests
+import pygame
+
+# Django REST frameworkのAPIエンドポイント
+url = "http://localhost:8000/api/game/"
+
+# APIからデータを取得
+response = requests.get(url)
+data = response.json()
+
+# Pygameでゲームを起動
+pygame.init()
+screen = pygame.display.set_mode((640, 480))
+
+# APIから取得したデータをゲームに表示
+font = pygame.font.Font(None, 36)
+text = font.render(str(data), True, (255, 255, 255))
+screen.blit(text, (20, 20))
+
+# ゲームの状況をAPIへ送信
+game_status = {"score": 100, "time": 120}
+response = requests.post(url, data=game_status)
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+```
+1. 上記のサンプルコードをテキストエディタにコピペする
+2. 自身の環境に合わせてAPIのエンドポイント（url）を修正する
+3. コードを実行し、APIからデータが正しく取得できていることを確認する
+4. Pygameの画面が表示され、APIから取得したデータが表示されていることを確認する
+5. APIへのデータ送信が正しく行われていることを確認する
+```
