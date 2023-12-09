@@ -1,0 +1,81 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+ゲームロジックの設計：Pygameでゲームのルールを作る
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+このセッションでは、Pygameを使用してゲームのロジックを設計する方法を学びます。具体的には、ゲームのキャラクターやオブジェクトの動き、衝突判定、スコア計算など、ゲームを構成する基本的な要素の作り方を学びます。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Pygameでのキャラクターやオブジェクトの動き：Pygameでは、`pygame.sprite.Sprite`クラスを継承したキャラクターやオブジェクトを作成し、その`update`メソッドをオーバーライドすることで動きを設定します。
+2. 衝突判定：`pygame.sprite.spritecollide`関数を使用して、スプライトの衝突を判定します。
+3. スコア計算：衝突判定やゲームの進行に応じてスコアを計算し、`pygame.font.Font`クラスを使用してスコアを画面に表示します。
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+import pygame
+import pygame.sprite
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load('player.png')
+        self.rect = self.image.get_rect()
+    
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= 5
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += 5
+        if keys[pygame.K_UP]:
+            self.rect.y -= 5
+        if keys[pygame.K_DOWN]:
+            self.rect.y += 5
+
+class Enemy(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load('enemy.png')
+        self.rect = self.image.get_rect()
+
+    def update(self):
+        self.rect.x -= 3
+
+player = Player()
+enemies = pygame.sprite.Group()
+
+# game loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+    
+    player.update()
+    enemies.update()
+    
+    if pygame.sprite.spritecollide(player, enemies, False):
+        print('Game Over')
+    
+    pygame.display.update()
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. 上記のサンプルコードを`game.py`という名前のPythonファイルとして保存します。
+2. コマンドラインから`python game.py`を実行して、ゲームが開始されることを確認します。
+3. キーボードの矢印キーを操作して、Playerが動くことを確認します。
+4. Enemyが左に移動し、Playerと衝突すると"Game Over"が表示されることを確認します。
+
