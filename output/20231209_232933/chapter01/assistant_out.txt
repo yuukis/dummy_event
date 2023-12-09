@@ -1,0 +1,63 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+Django REST frameworkの基礎
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+本教材では、Django REST frameworkの基本的な操作方法と、それを用いた簡単なAPIの作成方法を学びます。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Django REST frameworkとは？
+    Django REST frameworkは、PythonのWebフレームワークであるDjangoにおいてRESTfulなAPIを構築するための拡張ライブラリです。
+
+2. 環境構築
+    DjangoおよびDjango REST frameworkのインストール方法を学びます。
+
+3. サンプルプロジェクトの作成
+    Django REST frameworkを用いて簡単なAPIを作成する方法を学びます。
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```
+# DjangoとDjango REST frameworkのインストール
+pip install django djangorestframework
+
+# 新規プロジェクトの作成
+django-admin startproject myproject
+
+# 新規アプリケーションの作成
+cd myproject
+python manage.py startapp myapp
+
+# myapp/views.py へのコード追加
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class HelloWorld(APIView):
+    def get(self, request):
+        return Response("Hello, world!")
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Pythonがインストールされた環境でコマンドプロンプトまたはターミナルを開きます。
+2. `pip install django djangorestframework` を実行し、DjangoとDjango REST frameworkをインストールします。
+3. `django-admin startproject myproject` を実行し、新規プロジェクトを作成します。
+4. `cd myproject` を実行し、プロジェクトのディレクトリに移動します。
+5. `python manage.py startapp myapp` を実行し、新規アプリケーションを作成します。
+6. 任意のテキストエディタで `myapp/views.py` を開きます。
+7. このファイルの中に、サンプルコードをコピペします。
+8. 保存し、`python manage.py runserver`を実行します。
+9. ブラウザで `http://localhost:8000` にアクセスし、`Hello, world!` が表示されれば成功です。
+
