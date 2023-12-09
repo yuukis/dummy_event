@@ -1,0 +1,55 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"時空を超えた冒険：レトロゲームで学ぶ歴史情報の組み込み方"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、Pythonのライブラリ、Django REST Frameworkを用いて、ゲームに歴史情報を組み込む方法を学びます。具体的には、REST APIを使用して歴史情報データベースにアクセスし、その情報をゲームに組み込む方法を解説します。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Django REST Frameworkの基本
+    - REST APIとは何か、その役割と活用方法について説明します。
+2. 歴史情報データベースの作成
+    - Djangoのモデルを使用して歴史情報データベースを作成します。
+3. REST APIを用いたデータベースの操作
+    - Django REST Frameworkを使用してデータベースにアクセスし、データを取得する方法を説明します。
+4. 取得したデータのゲームへの組み込み
+    - 取得した歴史情報をゲームに組み込む方法を示します。
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# Django model for history information
+class History(models.Model):
+    event = models.CharField(max_length=200)
+    date = models.DateField()
+    description = models.TextField()
+
+# Django REST Framework view for API
+class HistoryAPI(viewsets.ModelViewSet):
+    queryset = History.objects.all()
+    serializer_class = HistorySerializer
+
+# Accessing the data from game
+response = requests.get('http://localhost:8000/api/history/')
+history_data = response.json()
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Djangoで新しいプロジェクトを作成し、Historyという名前のモデルを作ります。
+2. Historyモデルにevent, date, descriptionの各フィールドを追加します。
+3. Django REST Frameworkを使ってHistoryモデルのAPIを作成します。
+4. requestsライブラリを利用してAPIからデータを取得し、ゲームに組み込みます。
+
