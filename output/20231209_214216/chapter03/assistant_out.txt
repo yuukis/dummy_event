@@ -1,0 +1,50 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+"RESTful Game Development: Designing APIs with Django REST Framework"
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+このセクションでは、ゲーム開発におけるRESTful APIの設計に焦点を当て、Django REST Frameworkを使用してAPIを作成します。API設計の基本原則から、エンドポイントの設定、シリアライザーの使用、そしてリクエストとレスポンスの管理までをカバーします。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. **RESTful APIとは何か**: RESTful APIの基本的な概念とそのゲーム開発での利用方法について解説します。
+2. **Django REST Frameworkの概要**: Django REST Frameworkの主な機能とその使い方について解説します。
+3. **エンドポイントの設定**: Djangoでエンドポイントを設定する方法とその重要性について解説します。
+4. **シリアライザーの使用**: Django REST Frameworkでのシリアライザーの使用方法について解説します。
+5. **リクエストとレスポンスの管理**: Django REST Frameworkでのリクエストとレスポンスの管理方法について解説します。
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+from rest_framework import serializers, viewsets
+from .models import Game
+
+class GameSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Game
+        fields = ['name', 'release_date', 'game_category', 'played']
+
+class GameViewSet(viewsets.ModelViewSet):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Django REST Frameworkをインストールします。
+2. Gameモデルを作成します。
+3. GameSerializerを作成します。
+4. GameViewSetを作成します。
+5. DjangoのURLconfを設定して、作成したViewSetをエンドポイントとして接続します。
+6. APIをテストするために、ブラウザまたはcurlコマンドを使ってエンドポイントにアクセスします。
