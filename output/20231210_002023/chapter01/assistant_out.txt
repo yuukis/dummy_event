@@ -1,0 +1,68 @@
+[出力物タイトル]
+教材タイトル
+[出力物内容]
+"Django REST frameworkでAPIを作る: ユーザー認証APIの構築"
+
+[出力物タイトル]
+教材概要
+[出力物内容]
+このセクションでは、Django REST frameworkを使ってユーザー認証APIを作成します。ユーザーの登録、ログイン、ログアウト機能をもつ基本的なAPIの設計と実装を通じて、Django REST frameworkの基本的な使用方法を学びます。
+
+[出力物タイトル]
+教材テキスト
+[出力物内容]
+```
+1. Djangoプロジェクトの作成
+   Djangoプロジェクトを新たに作成します。ターミナルで以下のコマンドを実行してください。
+   ```
+   $ django-admin startproject restapi
+   ```
+
+2. Djangoアプリケーションの作成
+   Djangoプロジェクト内で新たにアプリケーションを作成します。ターミナルで以下のコマンドを実行してください。
+   ```
+   $ python manage.py startapp accounts
+   ```
+
+3. Django REST frameworkの設定
+   Djangoプロジェクトの設定ファイルにDjango REST frameworkを追加します。`restapi/settings.py`ファイルを開き、`INSTALLED_APPS`に`'rest_framework'`と`'accounts'`を追加してください。
+
+4. ユーザー認証APIの作成
+   `accounts/views.py`ファイルにユーザー登録、ログイン、ログアウトのビューを作成します。また、`accounts/urls.py`ファイルにそれぞれのビューへのURLを設定します。
+
+5. APIのテスト
+   APIが正常に動作するかテストします。ターミナルで以下のコマンドを実行してサーバーを起動し、ブラウザから各APIにアクセスしてみてください。
+   ```
+   $ python manage.py runserver
+   ```
+```
+
+[出力物タイトル]
+サンプルコード
+[出力物内容]
+```python
+# accounts/views.py
+from django.contrib.auth.models import User
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import UserSerializer
+
+@api_view(['POST'])
+def register(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+```
+
+[出力物タイトル]
+作業手順
+[出力物内容]
+1. ターミナルを開き、新たにDjangoプロジェクトを作成します。
+2. 作成したプロジェクトの中で新たにDjangoアプリケーションを作成します。
+3. Djangoプロジェクトの設定ファイル(`restapi/settings.py`)を開き、`INSTALLED_APPS`に`'rest_framework'`と`'accounts'`を追加します。
+4. `accounts/views.py`ファイルにユーザー登録、ログイン、ログアウトのビューを作成し、`accounts/urls.py`ファイルにそれぞれのビューへのURLを設定します。
+5. ターミナルでサーバーを起動し、ブラウザから各APIにアクセスしてテストします。
+
